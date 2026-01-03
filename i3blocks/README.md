@@ -1,0 +1,1 @@
+Yes, I use i3blocks. It's compatible with Sway, and I don’t really care about having a fancy bar like Waybar. I like that the i3blocks widgets are just simple shell scripts. Apparently, it can affect performance on Wayland, so I increased the update intervals to keep it smooth.
