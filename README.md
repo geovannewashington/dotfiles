@@ -1,7 +1,6 @@
-# This are my dotfiles.
+# These are my dotfiles.
 
-Each directory (almost) contains a sub README.md explaining my decisions, and why I use X or Y in a narrative
-story fashion.
+Each directory (almost all) contains a `README.md` explaining my decisions and why I use X or Y, written in a narrative style.
 
 ## Here are some screenshots
 
