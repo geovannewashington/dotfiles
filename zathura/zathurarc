@@ -1,0 +1,46 @@
+# Notifications
+set notification-error-bg       "rgba(0,0,0,1)"        # black
+set notification-error-fg       "rgba(255,0,0,1)"      # red
+set notification-warning-bg     "rgba(0,0,0,1)"        # black
+set notification-warning-fg     "rgba(255,255,0,1)"    # yellow
+set notification-bg             "rgba(0,0,0,1)"        # black
+set notification-fg             "rgba(255,255,255,1)"  # white
+
+# Completion
+set completion-bg               "rgba(0,0,0,1)"        # black
+set completion-fg               "rgba(255,255,255,1)"  # white
+set completion-group-bg         "rgba(0,0,0,1)"        # black
+set completion-group-fg         "rgba(200,200,200,1)"  # gray
+set completion-highlight-bg     "rgba(60,60,60,1)"     # dark gray
+set completion-highlight-fg     "rgba(255,255,255,1)"  # white
+
+# Index
+set index-bg                    "rgba(0,0,0,1)"        # black
+set index-fg                    "rgba(255,255,255,1)"  # white
+set index-active-bg             "rgba(60,60,60,1)"     # dark gray
+set index-active-fg             "rgba(255,255,255,1)"  # white
+
+# Inputbar
+set inputbar-bg                 "rgba(0,0,0,1)"        # black
+set inputbar-fg                 "rgba(255,255,255,1)"  # white
+
+# Statusbar
+set statusbar-bg                "rgba(0,0,0,1)"        # black
+set statusbar-fg                "rgba(255,255,255,1)"  # white
+
+# Highlights
+set highlight-color             "rgba(255,255,0,0.5)"  # yellow
+set highlight-active-color      "rgba(255,165,0,0.5)"  # orange
+
+# Defaults
+set default-bg                  "rgba(0,0,0,1)"        # black
+set default-fg                  "rgba(255,255,255,1)"  # white
+set render-loading              true
+set render-loading-bg           "rgba(0,0,0,1)"        # black
+set render-loading-fg           "rgba(255,255,255,1)"  # white
+
+# Document recoloring
+set recolor-lightcolor          "rgba(0,0,0,1)"        # black
+set recolor-darkcolor           "rgba(255,255,255,1)"  # white
+set recolor                     "true"
+set recolor-keephue             "true"

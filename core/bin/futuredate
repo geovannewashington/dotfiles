@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if the user provided an argument
+if [ -z "$1" ]; then
+    echo "Find the date after X days"
+    echo "Usage: futuredate <number_of_days>"
+    exit 1
+fi
+
+# Get the number of days from the first argument
+days=$1
+
+# Calculate the future date
+future_date=$(date -d "+$days days" +"%Y-%m-%d")
+
+# Print the result
+echo "Date after $days day(s): $future_date (YYYY-mm-dd)"

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+YT_CHANNEL="tposeprogrammer"
+TWITCH_CHANNEL="tposeprogrammer_"
+WORKSPACE="3"
+BROWSER="firefox"
+
+# Twitch chat
+swaymsg "workspace $WORKSPACE; exec --no-startup-id $BROWSER --new-window https://www.twitch.tv/popout/$TWITCH_CHANNEL/chat" >/dev/null 2>&1
+
+# YouTube chat
+VIDEO_ID=$(curl -s "https://www.youtube.com/@$YT_CHANNEL/live" | grep -o 'watch?v=[^"]*' | head -n 1 | cut -d'=' -f2)
+if [[ -n "$VIDEO_ID" ]]; then
+    swaymsg "exec --no-startup-id $BROWSER --new-window \"https://www.youtube.com/live_chat?is_popout=1&v=$VIDEO_ID\"" >/dev/null 2>&1
+else
+    notify-send "YouTube Chat" "No live found for @$YT_CHANNEL"
+fi

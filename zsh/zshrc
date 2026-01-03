@@ -1,0 +1,19 @@
+# ~/.zshrc
+
+# Only run in interactive shells
+[[ -o interactive ]] || return
+
+ENV_DIR="$HOME/core/env"
+
+# Load preload first
+if [[ -f "$ENV_DIR/preload/pre.zsh" ]]; then
+  source "$ENV_DIR/preload/pre.zsh"
+fi
+
+# Load every *.zsh file in env (excluding preload)
+for file in "$ENV_DIR"/*.zsh; do
+  [[ -f "$file" ]] || continue
+  source "$file"
+done
+
+export PATH=$PATH:/home/tpose/.spicetify

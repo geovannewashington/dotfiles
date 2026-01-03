@@ -1,0 +1,28 @@
+# i3blocks config
+
+separator_block_width=15
+
+[cpu]
+command=/home/tpose/.config/i3blocks/scripts/cpu_usage.sh
+interval=15
+label=  
+
+[temp]
+command=/home/tpose/.config/i3blocks/scripts/cpu_temp.sh
+interval=15
+label= 
+
+[mem]
+command=/home/tpose/.config/i3blocks/scripts/memory.sh
+interval=15
+label=  
+
+[disk]
+command=/home/tpose/.config/i3blocks/scripts/disk.sh
+interval=60
+label=  
+
+[clock]
+command=date '+  %Y-%m-%d %H:%M'
+interval=1
+

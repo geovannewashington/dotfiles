@@ -1,0 +1,224 @@
+############################
+# Environment / Startup
+############################
+
+set $XKB_CONFIG_ROOT $HOME/.config/xkb
+
+exec_always pkill swayidle
+exec_always dbus-update-activation-environment --systemd \
+    GTK_THEME XDG_CURRENT_DESKTOP WAYLAND_DISPLAY
+
+output * adaptive_sync off
+# output * hwcursor disable
+
+
+############################
+# Variables
+############################
+
+set $mod Mod4
+
+# Vim-style directions
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $term alacritty
+set $menu exec rofi -show drun
+
+
+############################
+# Appearance
+############################
+
+default_border pixel 2
+default_floating_border pixel 2
+
+gaps inner 8
+gaps outer 4
+smart_gaps on
+
+
+############################
+# Outputs / Wallpaper
+############################
+
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+
+############################
+# Input
+############################
+
+input type:keyboard {
+    xkb_layout us,br
+    xkb_variant ,abnt2
+    repeat_delay 200
+    repeat_rate  50
+}
+
+bindsym $mod+space input type:keyboard xkb_switch_layout next
+
+
+############################
+# Keybindings – Core
+############################
+
+bindsym $mod+Return exec $term
+bindsym $mod+d      exec $menu
+bindsym $mod+Shift+q kill
+
+floating_modifier $mod normal
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning \
+    -m 'You pressed the exit shortcut. Do you really want to exit sway?' \
+    -B 'Yes, exit sway' 'swaymsg exit'
+
+
+############################
+# Navigation
+############################
+
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+
+############################
+# Workspaces
+############################
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+
+############################
+# Layout / Containers
+############################
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+f focus mode_toggle
+bindsym $mod+a focus parent
+
+
+############################
+# Scratchpad
+############################
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+
+############################
+# Resize Mode
+############################
+
+mode "resize" {
+    bindsym $left  resize shrink width  100px
+    bindsym $right resize grow   width  100px
+    bindsym $up    resize shrink height 100px
+    bindsym $down  resize grow   height 100px
+
+    bindsym Left  resize shrink width  100px
+    bindsym Right resize grow   width  100px
+    bindsym Up    resize shrink height 100px
+    bindsym Down  resize grow   height 100px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+############################
+# Media / System Keys
+############################
+
+bindsym --locked XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute     exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym --locked XF86AudioPlay  exec playerctl play-pause
+bindsym --locked XF86AudioPause exec playerctl play-pause
+bindsym --locked XF86AudioPrev  exec playerctl previous
+bindsym --locked XF86AudioNext  exec playerctl next
+bindsym --locked XF86AudioStop  exec playerctl stop
+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp   exec brightnessctl set 5%+
+
+bindsym Print exec grim
+
+
+############################
+# Bar
+############################
+
+bar {
+    position top
+    font pango: Terminess Nerd Font 12
+    status_command i3blocks
+}
+
+
+############################
+# Scripts / Utilities
+############################
+
+exec_always --no-startup-id dunst
+exec "$HOME/core/bin/start-apps.sh"
+
+bindsym $mod+Shift+p exec "$HOME/core/bin/screenshot.sh"
+bindsym $mod+Shift+u exec "$HOME/core/bin/vault-unmount.sh"
+bindsym $mod+w       exec "$HOME/core/bin/wj"
+
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+e exec rofi -modi emoji -show emoji
+
+
+############################
+# System Includes
+############################
+
+include /etc/sway/config.d/*

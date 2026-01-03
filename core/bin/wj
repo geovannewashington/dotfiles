@@ -1,0 +1,123 @@
+#!/bin/bash
+
+input="$*"
+
+command -v jq >/dev/null 2>&1 || {
+    rofi -e "Missing dependency: jq [Command-line JSON processor] - press ESC to exit"
+    exit 1
+}
+
+# If no args passed, ask via rofi
+if [ -z "$input" ]; then
+    input=$(rofi -dmenu -p "Jump:")
+    [ -z "$input" ] && exit
+fi
+
+cmd=$(awk '{print $1}' <<<"$input")
+args=$(awk '{$1=""; print substr($0,2)}' <<<"$input")
+
+open() {
+    xdg-open "$1" >/dev/null 2>&1
+}
+
+encode() {
+    jq -rn --arg q "$1" '$q|@uri'
+}
+
+case "$cmd" in
+yt)
+    [ -z "$args" ] && open "https://www.youtube.com/feed/playlists" ||
+        open "https://www.youtube.com/results?search_query=$(encode "$args")"
+    ;;
+x)
+    open "https://twitter.com/tpose_dev"
+    ;;
+wiki)
+    [ -z "$args" ] && open "https://en.wikipedia.org" ||
+        open "https://en.wikipedia.org/wiki/Special:Search?search=$(encode "$args")"
+    ;;
+web)
+    open "https://web.whatsapp.com"
+    ;;
+trans)
+    if [ -z "$args" ]; then
+        open "https://translate.google.com"
+    else
+        from=$(awk '{print $1}' <<<"$args")
+        to=$(awk '{print $2}' <<<"$args")
+        text=$(awk '{$1=""; $2=""; print substr($0,3)}' <<<"$args")
+        open "https://translate.google.com/?sl=$from&tl=$to&text=$(encode "$text")&op=translate"
+    fi
+    ;;
+rc)
+    open "https://context.reverso.net/translation/"
+    ;;
+sc)
+    [ -z "$args" ] && open "https://soundcloud.com/zaylabs" ||
+        open "https://soundcloud.com/search?q=$(encode "$args")"
+    ;;
+r)
+    [ -z "$args" ] && open "https://www.reddit.com" ||
+        open "https://www.reddit.com/r/${args}"
+    ;;
+pin)
+    [ -z "$args" ] && open "https://www.pinterest.com" ||
+        open "https://www.pinterest.com/search/pins/?q=$(encode "$args")"
+    ;;
+ig)
+    [ -z "$args" ] && open "https://www.instagram.com/geovanne_washington" ||
+        open "https://www.instagram.com/${args}"
+    ;;
+grok)
+    open "https://x.com/i/grok"
+    ;;
+en)
+    open "https://www.google.com/search?gl=us&hl=en&gws_rd=cr&pws=0&q=$(encode "$args")"
+    ;;
+audios)
+    open "https://aulasdeinglesgratis.net/200-textos-em-ingles-com-traducao-e-audio/"
+    ;;
+seek)
+    open "https://chat.deepseek.com/"
+    ;;
+cs)
+    open "https://cs50.harvard.edu/x/2025/"
+    ;;
+gpt)
+    open "https://chat.openai.com/"
+    ;;
+tw)
+    [ -z "$args" ] && open "https://www.twitch.tv" ||
+        open "https://www.twitch.tv/${args}"
+    ;;
+ex)
+    open "https://excalidraw.com"
+    ;;
+ghub)
+    [ -z "$args" ] && open "https://github.com/geovannewashington" ||
+        open "https://github.com/$(encode "$args")"
+    ;;
+med)
+    [ -z "$args" ] && open "https://medium.com/me/stories/drafts" ||
+        open "https://medium.com/@$(encode "$args")"
+    ;;
+ud)
+    [ -z "$args" ] && open "https://www.udemy.com/home/my-courses/learning/" ||
+        open "https://www.udemy.com/courses/search/?q=$(encode "$args")"
+    ;;
+monk)
+    open "https://monkeytype.com/"
+    ;;
+simpsons)
+    open "https://fmovies-tv.tv/tv/watch-the-simpsons-movies-free-fmovies-39543"
+    ;;
+in)
+    open "https://www.linkedin.com/jobs/"
+    ;;
+bootdev)
+    open "https://www.boot.dev/dashboard"
+    ;;
+*)
+    rofi -e "Unknown command: $cmd"
+    ;;
+esac

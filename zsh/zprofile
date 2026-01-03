@@ -1,0 +1,8 @@
+# Load env variables
+export XDG_CURRENT_DESKTOP=sway
+export GTK_THEME=Flat-Remix-GTK-Blue-Darkest-Solid
+
+# Auto-start sway on tty1
+if [[ -z "$WAYLAND_DISPLAY" && "$XDG_VTNR" -eq 1 ]]; then
+    exec sway --unsupported-gpu
+fi
