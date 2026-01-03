@@ -67,8 +67,8 @@ sync_file ".zprofile" "zsh/zprofile"
 sync_file ".session_env" "zsh/session.env"
 
 # Keyd system config
-sudo rsync -a --delete /etc/keyd/ "$DST/keyd/"
-log "Synced /etc/keyd -> keyd"
+# sudo rsync -a --delete /etc/keyd/ "$DST/keyd/"
+# log "Synced /etc/keyd -> keyd"
 
 # Cron jobs
 mkdir -p "$DST/cronie"
@@ -78,6 +78,7 @@ crontab -l >"$DST/cronie/user-crontab.txt" || log "No user crontab"
 cd "$DST"
 git add .
 git commit -m "backup $(date +%F)" || log "No changes to commit"
+git push origin main || log "Git push failed"
 
 log "==== Backup finished ===="
 echo >>"$LOG_FILE"
