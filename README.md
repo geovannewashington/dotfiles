@@ -8,4 +8,4 @@ story fashion.
 ![first screenshot](./assets/screenshots/01.png)
 ![second screenshot](./assets/screenshots/02.png)
 ![third screenshot](./assets/screenshots/03.png)
-![fourth screenshot](./assets/screenshots/05.png)
+![fourth screenshot](./assets/screenshots/04.png)
