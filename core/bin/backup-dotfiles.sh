@@ -5,6 +5,7 @@ HOME=/home/tpose
 DST=/home/tpose/utils/backups/dotfiles
 LOG_DIR=/home/tpose/utils/logs
 LOG_FILE=$LOG_DIR/backup-dotfiles.log
+RSYNC_DELETE_OPTS="--delete --exclude=README.md --exclude=README --exclude=.git --exclude=*.md"
 
 # Ensure directories exist
 mkdir -p "$DST/packages" "$LOG_DIR"
@@ -25,7 +26,8 @@ sync_dir() {
     src="$1"
     dst="$2"
     mkdir -p "$DST/$dst"
-    rsync -a --delete "$HOME/$src/" "$DST/$dst/"
+    rsync -a $RSYNC_DELETE_OPTS "$HOME/$src/" "$DST/$dst/"
+
     log "Synced directory $src -> $dst"
 }
 

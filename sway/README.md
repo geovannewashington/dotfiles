@@ -1,0 +1,1 @@
+Sway is a drop-in replacement for i3wm users who want to switch to Wayland. I made the switch and highly recommend it, everything on Wayland feels smoother. Specifically, I needed a feature from sway-git (the non-stable release) for display capture, and it works perfectly.
