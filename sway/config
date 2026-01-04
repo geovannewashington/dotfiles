@@ -4,11 +4,12 @@
 
 set $XKB_CONFIG_ROOT $HOME/.config/xkb
 
-exec_always pkill swayidle
+# exec_always pkill swayidle
 exec_always dbus-update-activation-environment --systemd \
     GTK_THEME XDG_CURRENT_DESKTOP WAYLAND_DISPLAY
 
 output * adaptive_sync off
+output * dpms on
 # output * hwcursor disable
 
 
@@ -139,6 +140,7 @@ bindsym $mod+f fullscreen
 bindsym $mod+Shift+f focus mode_toggle
 bindsym $mod+a focus parent
 
+# bindsym $mod+Shift+space floating toggle
 
 ############################
 # Scratchpad

@@ -1,1 +1,0 @@
-Zathura is a PDF reader with Vim-style motions and extensive visual customization. Since I study a lot from PDF books, it’s extremely handy. Instead of opening a browser tab, I use this lightweight and efficient C application.

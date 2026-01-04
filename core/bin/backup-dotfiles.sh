@@ -54,6 +54,7 @@ sync_dir ".config/i3blocks" "i3blocks"
 sync_dir ".config/zathura" "zathura"
 sync_dir ".themes" "gtk/themes"
 sync_dir ".config/gtk-3.0" "gtk/gtk-3.0"
+sync_dir ".config/xdg-desktop-portal" "xdg-desktop-portal"
 
 PROFILE=$(find "$HOME/.mozilla/firefox" -maxdepth 1 -type d -name '*.default-release' | head -n1)
 [ -f "$PROFILE/user.js" ] && sync_file "$PROFILE/user.js" "firefox/user.js"

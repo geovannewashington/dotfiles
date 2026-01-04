@@ -1,1 +1,0 @@
-Alacritty doesn't support image rendering, but it's my terminal emulator of choice because of its speed. Even WezTerm (also GPU-accelerated and written in Rust) doesn't feel as fast. I'm not sure if it's NVIDIA-related, but I still prefer the smoothness of Alacritty. For image previews, I rely on a GUI file manager rather than dealing with slight delays in the terminal.

@@ -48,3 +48,4 @@
 # Auto pushes to GitHub
 30 13 * * * /home/tpose/core/bin/push-all.sh >> $HOME/utils/logs/push-all.log 2>&1 
 00 14 * * * /home/tpose/core/bin/backup-obs.sh >> $HOME/utils/logs/obs-backup.log 2>&1
+00 15 * * * /home/tpose/core/bin/backup-dotfiles.sh >> $HOME/utils/logs/dotfiles-backup.log 2>&1

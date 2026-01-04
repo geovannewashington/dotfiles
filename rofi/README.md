@@ -1,1 +1,0 @@
-Rofi is far more than just an app launcher. It’s the tool you want once you no longer want to open applications through the terminal. Beyond that, it serves as a general-purpose front-end for your Bash scripts and is incredibly customizable.
