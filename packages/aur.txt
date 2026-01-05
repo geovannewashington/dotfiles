@@ -1,11 +1,7 @@
 nvidia-580xx-dkms
 nvidia-580xx-utils
-obs-multi-rtmp-debug
 oh-my-zsh-git
-spicetify-cli-debug
 sway-git
-sway-git-debug
 wlroots-git
-wlroots-git-debug
 yay
 yay-debug

@@ -7,7 +7,7 @@ opacity = 1.0
 [font]
 normal = { family = "Terminess Nerd Font Mono", style = "Bold" } 
 italic = { family = "Terminess Nerd Font Mono", style = "Bold" }  # Force italics to use bold
-size = 21
+size = 18
 
 [colors.primary]
 background = '#000000'
