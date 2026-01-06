@@ -16,6 +16,7 @@ fzf
 gdb
 gimp
 git
+go
 gocryptfs
 grim
 gst-plugin-pipewire

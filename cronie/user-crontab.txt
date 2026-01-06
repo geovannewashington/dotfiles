@@ -34,8 +34,8 @@
 00 16 * * 3 /home/tpose/core/bin/notify.sh "Leetcode" "" "leetcode-logo.png"
 
 ## Thursday
-00 10 * * 2 /home/tpose/core/bin/notify.sh "C Project" "" "c-logo.png" 
-00 14 * * 2 /home/tpose/core/bin/notify.sh "Uninter" "College" "education.png"
+00 10 * * 4 /home/tpose/core/bin/notify.sh "C Project" "" "c-logo.png" 
+00 14 * * 4 /home/tpose/core/bin/notify.sh "Uninter" "College" "education.png"
 
 ## Friday
 00 10 * * 5 /home/tpose/core/bin/notify.sh "🦫 Go (boot.dev)" "hora do gopher" "go-gopher.png"
