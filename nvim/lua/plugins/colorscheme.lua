@@ -1,37 +1,181 @@
+-- return {
+-- 	"kvrohit/rasmus.nvim",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		vim.cmd.colorscheme("rasmus")
+--
+-- 		local groups = {
+-- 			"Normal",
+-- 			"NormalNC",
+-- 			"NormalFloat",
+-- 			"SignColumn",
+-- 			"LineNr",
+-- 			"EndOfBuffer",
+-- 			"FloatBorder",
+-- 			"StatusLine",
+-- 			"StatusLineNC",
+-- 			"WinSeparator",
+-- 		}
+--
+-- 		-- fundo totalmente preto + foreground coldark
+-- 		for _, group in ipairs(groups) do
+-- 			vim.api.nvim_set_hl(0, group, { bg = "#000000", fg = "#C9D1D9" })
+-- 		end
+--
+-- 		-- estilo Coldark-Dark
+-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#5C6370", italic = true })
+-- 		vim.api.nvim_set_hl(0, "Function", { fg = "#5DC2D6" })
+-- 		vim.api.nvim_set_hl(0, "Keyword", { fg = "#C586C0", bold = true })
+-- 		vim.api.nvim_set_hl(0, "String", { fg = "#EBCB8B" })
+-- 		vim.api.nvim_set_hl(0, "Number", { fg = "#7FE5F0" })
+-- 		vim.api.nvim_set_hl(0, "Type", { fg = "#4A90A4" })
+-- 		vim.api.nvim_set_hl(0, "Constant", { fg = "#E06C75" })
+-- 		vim.api.nvim_set_hl(0, "Operator", { fg = "#C9D1D9" })
+-- 		vim.api.nvim_set_hl(0, "Identifier", { fg = "#F6A878" })
+-- 		vim.api.nvim_set_hl(0, "Boolean", { fg = "#7BD88F" })
+-- 	end,
+-- }
+
+-- return {
+-- 	"Mofiqul/adwaita.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+--
+-- 	-- configure and set on startup
+-- 	config = function()
+-- 		vim.g.adwaita_darker = true -- for darker version
+-- 		vim.g.adwaita_disable_cursorline = true -- to disable cursorline
+-- 		vim.g.adwaita_transparent = true -- makes the background transparent
+-- 		vim.cmd("colorscheme adwaita")
+-- 	end,
+-- }
+
+-- return {
+-- 	"yourusername/vscode_dark.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+--
+-- 	-- configure and set on startup
+-- 	config = function()
+-- 		vim.cmd([[
+-- 			highlight Normal guifg=#D4D4D4 guibg=#1E1E1E
+-- 			highlight Cursor guifg=#1E1E1E guibg=#AEAFAD
+-- 			highlight Comment guifg=#6A9955 gui=italic
+-- 			highlight Keyword guifg=#569CD6 gui=bold
+-- 			highlight Function guifg=#DCDCAA
+-- 			highlight Variable guifg=#9CDCFE
+-- 			highlight String guifg=#CE9178
+-- 			highlight Number guifg=#B5CEA8
+-- 			highlight Type guifg=#4EC9B0
+-- 			highlight Operator guifg=#D4D4D4
+-- 			highlight Error guifg=#F44747 gui=bold
+-- 			highlight Warning guifg=#FF8800 gui=bold
+-- 			highlight LineNr guifg=#858585
+-- 			highlight Pmenu guibg=#1E1E1E guifg=#D4D4D4
+-- 		]])
+-- 		vim.cmd("colorscheme vscode_dark")
+-- 	end,
+-- }
+
 return {
-	"kvrohit/rasmus.nvim",
+	"Mofiqul/vscode.nvim",
+	lazy = false,
 	priority = 1000,
+
 	config = function()
-		vim.cmd.colorscheme("rasmus")
+		-- Set background preference
+		vim.o.background = "dark" -- or "light" if you prefer
 
-		local groups = {
-			"Normal",
-			"NormalNC",
-			"NormalFloat",
-			"SignColumn",
-			"LineNr",
-			"EndOfBuffer",
-			"FloatBorder",
-			"StatusLine",
-			"StatusLineNC",
-			"WinSeparator",
-		}
+		-- Get colors table
+		local c = require("vscode.colors").get_colors()
 
-		-- fundo totalmente preto + foreground coldark
-		for _, group in ipairs(groups) do
-			vim.api.nvim_set_hl(0, group, { bg = "#000000", fg = "#C9D1D9" })
-		end
+		-- Setup theme
+		require("vscode").setup({
+			transparent = true,
+			italic_comments = true,
+			italic_inlayhints = true,
+			underline_links = true,
+			disable_nvimtree_bg = true,
+			terminal_colors = true,
 
-		-- estilo Coldark-Dark
-		vim.api.nvim_set_hl(0, "Comment", { fg = "#5C6370", italic = true })
-		vim.api.nvim_set_hl(0, "Function", { fg = "#5DC2D6" })
-		vim.api.nvim_set_hl(0, "Keyword", { fg = "#C586C0", bold = true })
-		vim.api.nvim_set_hl(0, "String", { fg = "#EBCB8B" })
-		vim.api.nvim_set_hl(0, "Number", { fg = "#7FE5F0" })
-		vim.api.nvim_set_hl(0, "Type", { fg = "#4A90A4" })
-		vim.api.nvim_set_hl(0, "Constant", { fg = "#E06C75" })
-		vim.api.nvim_set_hl(0, "Operator", { fg = "#C9D1D9" })
-		vim.api.nvim_set_hl(0, "Identifier", { fg = "#F6A878" })
-		vim.api.nvim_set_hl(0, "Boolean", { fg = "#7BD88F" })
+			color_overrides = {
+				vscLineNumber = "#FFFFFF",
+			},
+
+			group_overrides = {
+				Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+			},
+		})
+
+		-- Load the colorscheme
+		vim.cmd.colorscheme("vscode")
 	end,
 }
+
+-- return {
+-- 	"Mofiqul/vscode.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+--
+-- 	config = function()
+-- 		-- Set dark background
+-- 		vim.o.background = "dark"
+--
+-- 		-- Get colors table
+-- 		local c = require("vscode.colors").get_colors()
+--
+-- 		-- Setup VSCode theme
+-- 		require("vscode").setup({
+-- 			transparent = true,
+-- 			italic_comments = true,
+-- 			italic_inlayhints = true,
+-- 			underline_links = true,
+-- 			disable_nvimtree_bg = true,
+-- 			terminal_colors = true,
+--
+-- 			color_overrides = {
+-- 				vscLineNumber = "#FFFFFF",
+-- 			},
+--
+-- 			group_overrides = {
+-- 				Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+-- 			},
+-- 		})
+--
+-- 		-- Load the VSCode theme
+-- 		vim.cmd.colorscheme("vscode")
+--
+-- 		-- -----------------------------
+-- 		-- Full pitch-black Coldark-style overrides
+-- 		-- -----------------------------
+-- 		local black_groups = {
+-- 			"Normal",
+-- 			"NormalNC",
+-- 			"NormalFloat",
+-- 			"SignColumn",
+-- 			"LineNr",
+-- 			"EndOfBuffer",
+-- 			"FloatBorder",
+-- 			"StatusLine",
+-- 			"StatusLineNC",
+-- 			"WinSeparator",
+-- 		}
+--
+-- 		-- Apply full black background + foreground for coldark style
+-- 		for _, group in ipairs(black_groups) do
+-- 			vim.api.nvim_set_hl(0, group, { bg = "#000000", fg = "#C9D1D9" })
+-- 		end
+--
+-- 		-- Coldark-Dark style syntax
+-- 		vim.api.nvim_set_hl(0, "Comment", { fg = "#5C6370", italic = true })
+-- 		vim.api.nvim_set_hl(0, "Function", { fg = "#5DC2D6" })
+-- 		vim.api.nvim_set_hl(0, "Keyword", { fg = "#C586C0", bold = true })
+-- 		vim.api.nvim_set_hl(0, "String", { fg = "#EBCB8B" })
+-- 		vim.api.nvim_set_hl(0, "Number", { fg = "#7FE5F0" })
+-- 		vim.api.nvim_set_hl(0, "Type", { fg = "#4A90A4" })
+-- 		vim.api.nvim_set_hl(0, "Constant", { fg = "#E06C75" })
+-- 		vim.api.nvim_set_hl(0, "Operator", { fg = "#C9D1D9" })
+-- 		vim.api.nvim_set_hl(0, "Identifier", { fg = "#F6A878" })
+-- 		vim.api.nvim_set_hl(0, "Boolean", { fg = "#7BD88F" })
+-- 	end,
+-- }

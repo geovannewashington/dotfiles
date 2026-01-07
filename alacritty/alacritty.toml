@@ -5,13 +5,17 @@ decorations = "None"
 opacity = 1.0
 
 [font]
-normal = { family = "Terminess Nerd Font Mono", style = "Bold" } 
-italic = { family = "Terminess Nerd Font Mono", style = "Bold" }  # Force italics to use bold
-size = 18
+# normal = { family = "Terminess Nerd Font Mono", style = "Bold" } 
+# italic = { family = "Terminess Nerd Font Mono", style = "Bold" }  # Force italics to use bold
+# normal = { family = "Zenbones Brainy", style = "normal" } 
+# italic = { family = "Zenbones Brainy", style = "normal" }  # Force italics to use bold
+normal = { family = "UbuntuMono Nerd Font", style = "normal" } 
+italic = { family = "UbuntuMono Nerd Font", style = "normal" }  # Force italics to use bold
+size = 19
 
-[colors.primary]
-background = '#000000'
-foreground = '#ffffff'
+# [colors.primary]
+# background = '#000000'
+# foreground = '#ffffff'
 
 [scrolling]
 history = 100000

@@ -4,46 +4,72 @@
 
 # format:
 # min hour * * * /home/tpose/core/bin/notify.sh "TITLE" "BODY" "ICON_NAME"
-# note, 1-6 means: run from day 1 (monday) to 6 (saturday), effectively ignoring sunday
+# 1-6 = monday to saturday
 
-## Daily-ish
-40 07 * * 1-6 /home/tpose/core/bin/notify.sh "🐝 Good Morning" "procurar por estágio" "briefcase.png" 
-40 08 * * 1-6 /home/tpose/core/bin/notify.sh "🌞 Sun Bath" "go take a fresh air" "nature.png" 
+## Segunda (1)
+40 07 * * 1 /home/tpose/core/bin/notify.sh "Career" "LinkedIn e vagas" "briefcase.png"
+40 08 * * 1 /home/tpose/core/bin/notify.sh "Sun" "Fresh air" "nature.png"
+00 09 * * 1 /home/tpose/core/bin/notify.sh "Anki" "Populate (Software)" "anki-logo.png"
+30 09 * * 1 /home/tpose/core/bin/notify.sh "Anki" "Review (Software)" "anki-logo.png"
+00 10 * * 1 /home/tpose/core/bin/notify.sh "Go" "boot.dev LIVE" "go-gopher.png"
+00 13 * * 1 /home/tpose/core/bin/notify.sh "Projeto Go" "" "go-gopher.png"
+00 16 * * 1 /home/tpose/core/bin/notify.sh "Git" "boot.dev" "git-logo.png"
+00 18 * * 1 /home/tpose/core/bin/notify.sh "English" "Study" "english-logo.png"
+30 18 * * 1 /home/tpose/core/bin/notify.sh "Anki" "Review (English)" "anki-logo.png"
+00 21 * * 1 /home/tpose/core/bin/notify.sh "Wrap up" "Dinner + sleep prep" "happy-star.png"
 
-00 09 * * 1-6 /home/tpose/core/bin/notify.sh "Developer" "Populate Anki" "anki-logo.png"
-30 09 * * 1-6 /home/tpose/core/bin/notify.sh "Developer" "Review Anki" "anki-logo.png"
+## Terça (2)
+40 08 * * 2 /home/tpose/core/bin/notify.sh "Sun" "Fresh air" "nature.png"
+40 07 * * 2 /home/tpose/core/bin/notify.sh "Anki" "Populate (Software)" "anki-logo.png"
+10 08 * * 2 /home/tpose/core/bin/notify.sh "Anki" "Review (Software)" "anki-logo.png"
+00 09 * * 2 /home/tpose/core/bin/notify.sh "Go" "boot.dev LIVE" "go-gopher.png"
+00 13 * * 2 /home/tpose/core/bin/notify.sh "C" "K&R / Effective C" "c-logo.png"
+00 16 * * 2 /home/tpose/core/bin/notify.sh "Linux" "Makefile" "tux-logo.png"
+00 18 * * 2 /home/tpose/core/bin/notify.sh "Linux" "Bash" "tux-logo.png"
+00 21 * * 2 /home/tpose/core/bin/notify.sh "Wrap up" "Dinner + sleep prep" "happy-star.png"
 
-00 13 * * 1-6 /home/tpose/core/bin/notify.sh "🍽️ Lunch" "eat eat eat" "food.png"
-00 18 * * 1-6 /home/tpose/core/bin/notify.sh "English Studies" "The simpsons OR Text & audio" "english-logo.png"
-30 18 * * 1-6 /home/tpose/core/bin/notify.sh "English" "Review Anki" "anki-logo.png"
-00 21 * * 1-6 /home/tpose/core/bin/notify.sh "✅ Day Completed" "Jantar e preparar para dormir" "happy-star.png"
+## Quarta (3)
+40 07 * * 3 /home/tpose/core/bin/notify.sh "Career" "LinkedIn e vagas" "briefcase.png"
+40 08 * * 3 /home/tpose/core/bin/notify.sh "Sun" "Fresh air" "nature.png"
+00 09 * * 3 /home/tpose/core/bin/notify.sh "Anki" "Populate (Software)" "anki-logo.png"
+30 09 * * 3 /home/tpose/core/bin/notify.sh "Anki" "Review (Software)" "anki-logo.png"
+00 10 * * 3 /home/tpose/core/bin/notify.sh "Go" "boot.dev LIVE" "go-gopher.png"
+00 13 * * 3 /home/tpose/core/bin/notify.sh "Backend" "Docker + HTTP Go" "ether-cable.png"
+00 16 * * 3 /home/tpose/core/bin/notify.sh "Networking" "Concepts" "ether-cable.png"
+00 18 * * 3 /home/tpose/core/bin/notify.sh "English" "Study" "english-logo.png"
+30 18 * * 3 /home/tpose/core/bin/notify.sh "Anki" "Review (English)" "anki-logo.png"
+00 21 * * 3 /home/tpose/core/bin/notify.sh "Wrap up" "Dinner + sleep prep" "happy-star.png"
 
-## Monday
-00 10 * * 1 /home/tpose/core/bin/notify.sh "🦫 Go (boot.dev)" "hora do gopher" "go-gopher.png"
-00 14 * * 1 /home/tpose/core/bin/notify.sh "🦫 Go (boot.dev)" "hora do gopher (parte 2)" "go-gopher.png"
-00 16 * * 1 /home/tpose/core/bin/notify.sh "🐙 Git (boot.dev)" "" "git-logo.png"
+## Quinta (4)
+40 08 * * 4 /home/tpose/core/bin/notify.sh "Sun" "Fresh air" "nature.png"
+40 07 * * 4 /home/tpose/core/bin/notify.sh "Anki" "Populate (Software)" "anki-logo.png"
+10 08 * * 4 /home/tpose/core/bin/notify.sh "Anki" "Review (Software)" "anki-logo.png"
+00 09 * * 4 /home/tpose/core/bin/notify.sh "Go" "boot.dev LIVE" "go-gopher.png"
+00 13 * * 4 /home/tpose/core/bin/notify.sh "College" "Faculdade" "education.png"
+00 18 * * 4 /home/tpose/core/bin/notify.sh "English" "Study" "english-logo.png"
+30 18 * * 4 /home/tpose/core/bin/notify.sh "Anki" "Review (English)" "anki-logo.png"
+00 21 * * 4 /home/tpose/core/bin/notify.sh "Wrap up" "Dinner + sleep prep" "happy-star.png"
 
-## Tuesday 
-00 10 * * 2 /home/tpose/core/bin/notify.sh "K&R" "The C programming Language" "c-logo.png" 
-00 14 * * 2 /home/tpose/core/bin/notify.sh "Linux / OS" "Bash/Tooling" "tux-logo.png"
-00 16 * * 2 /home/tpose/core/bin/notify.sh "Linux / OS" "Linux Pocket Guide" "tux-logo.png"
+## Sexta (5)
+40 07 * * 5 /home/tpose/core/bin/notify.sh "Career" "LinkedIn e vagas" "briefcase.png"
+40 08 * * 5 /home/tpose/core/bin/notify.sh "Sun" "Fresh air" "nature.png"
+00 09 * * 5 /home/tpose/core/bin/notify.sh "Anki" "Populate (Software)" "anki-logo.png"
+30 09 * * 5 /home/tpose/core/bin/notify.sh "Anki" "Review (Software)" "anki-logo.png"
+00 10 * * 5 /home/tpose/core/bin/notify.sh "Go" "boot.dev LIVE" "go-gopher.png"
+00 13 * * 5 /home/tpose/core/bin/notify.sh "Projeto Go" "" "go-gopher.png"
+00 16 * * 5 /home/tpose/core/bin/notify.sh "CS50x" "" "harvard-logo.png"
+00 21 * * 5 /home/tpose/core/bin/notify.sh "Wrap up" "Dinner + sleep prep" "happy-star.png"
 
-## Wednesday
-00 10 * * 3 /home/tpose/core/bin/notify.sh "Backend Roadmap" "" "ether-cable.png"
-00 14 * * 3 /home/tpose/core/bin/notify.sh "DSA with C" "Data Structures & Algorithms" "c-logo.png"
-00 16 * * 3 /home/tpose/core/bin/notify.sh "Leetcode" "" "leetcode-logo.png"
-
-## Thursday
-00 10 * * 4 /home/tpose/core/bin/notify.sh "C Project" "" "c-logo.png" 
-00 14 * * 4 /home/tpose/core/bin/notify.sh "Uninter" "College" "education.png"
-
-## Friday
-00 10 * * 5 /home/tpose/core/bin/notify.sh "🦫 Go (boot.dev)" "hora do gopher" "go-gopher.png"
-00 14 * * 5 /home/tpose/core/bin/notify.sh "CS50x" "" "harvard-logo.png"
-
-## Saturday
-00 10 * * 6 /home/tpose/core/bin/notify.sh "JS/TS (Udemy)" "MERN stack (ReactJS)" "web-logo.png"
-00 14 * * 6 /home/tpose/core/bin/notify.sh "Astro.js" "Frontend framework for my portfolio" "astrojs-logo.png"
+## Sábado (6)
+40 08 * * 6 /home/tpose/core/bin/notify.sh "Sun" "Fresh air" "nature.png"
+40 07 * * 6 /home/tpose/core/bin/notify.sh "Anki" "Populate (Software)" "anki-logo.png"
+10 08 * * 6 /home/tpose/core/bin/notify.sh "Anki" "Review (Software)" "anki-logo.png"
+00 09 * * 6 /home/tpose/core/bin/notify.sh "Go" "boot.dev LIVE" "go-gopher.png"
+00 13 * * 6 /home/tpose/core/bin/notify.sh "C Project" "" "c-logo.png"
+00 16 * * 6 /home/tpose/core/bin/notify.sh "Astro.js" "Portfolio" "astrojs-logo.png"
+00 18 * * 6 /home/tpose/core/bin/notify.sh "English" "Study" "english-logo.png"
+30 18 * * 6 /home/tpose/core/bin/notify.sh "Anki" "Review (English)" "anki-logo.png"
+00 21 * * 6 /home/tpose/core/bin/notify.sh "Wrap up" "Dinner + sleep prep" "happy-star.png"
 
 # Auto pushes to GitHub
 30 13 * * * /home/tpose/core/bin/push-all.sh >> $HOME/utils/logs/push-all.log 2>&1 
