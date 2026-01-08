@@ -215,6 +215,10 @@ bindsym $mod+Shift+p exec "$HOME/core/bin/screenshot.sh"
 bindsym $mod+Shift+u exec "$HOME/core/bin/vault-unmount.sh"
 bindsym $mod+w       exec "$HOME/core/bin/wj"
 
+# Streaming (Wayland-safe)
+bindsym Ctrl+Shift+Mod1+1 exec "$HOME/core/secret-bin/mic-state.sh"
+bindsym Ctrl+Shift+Mod1+c exec "$HOME/core/secret-bin/cam-state.sh.sh"
+
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+e exec rofi -modi emoji -show emoji
 

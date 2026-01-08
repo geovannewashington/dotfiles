@@ -154,7 +154,16 @@ return {
 		-- - settings (table): Override the default settings passed when initializing the server.
 		local servers = {
 			clangd = {},
-			gopls = {},
+			gopls = {
+                settings = {
+                    gopls = {
+                        build = {
+                            experimentalWorkspaceModule = true,
+                            flags = { "-tags=cgo" },
+                        },
+                    },
+                },
+            },
 			lua_ls = {
 				settings = {
 					Lua = {

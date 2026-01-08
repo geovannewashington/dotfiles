@@ -1,5 +1,7 @@
 nvidia-580xx-dkms
 nvidia-580xx-utils
+obs-cli
+obs-cli-debug
 oh-my-zsh-git
 sway-git
 wlroots-git
