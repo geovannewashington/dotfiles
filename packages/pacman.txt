@@ -39,7 +39,6 @@ noto-fonts
 noto-fonts-emoji
 npm
 nvidia-580xx-dkms
-obs-cli
 oh-my-zsh-git
 openssh
 pipewire
