@@ -77,40 +77,40 @@
 -- 	end,
 -- }
 
-return {
-	"Mofiqul/vscode.nvim",
-	lazy = false,
-	priority = 1000,
-
-	config = function()
-		-- Set background preference
-		vim.o.background = "dark" -- or "light" if you prefer
-
-		-- Get colors table
-		local c = require("vscode.colors").get_colors()
-
-		-- Setup theme
-		require("vscode").setup({
-			transparent = true,
-			italic_comments = true,
-			italic_inlayhints = true,
-			underline_links = true,
-			disable_nvimtree_bg = true,
-			terminal_colors = true,
-
-			color_overrides = {
-				vscLineNumber = "#FFFFFF",
-			},
-
-			group_overrides = {
-				Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-			},
-		})
-
-		-- Load the colorscheme
-		vim.cmd.colorscheme("vscode")
-	end,
-}
+-- return {
+-- 	"Mofiqul/vscode.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+--
+-- 	config = function()
+-- 		-- Set background preference
+-- 		vim.o.background = "dark" -- or "light" if you prefer
+--
+-- 		-- Get colors table
+-- 		local c = require("vscode.colors").get_colors()
+--
+-- 		-- Setup theme
+-- 		require("vscode").setup({
+-- 			transparent = true,
+-- 			italic_comments = true,
+-- 			italic_inlayhints = true,
+-- 			underline_links = true,
+-- 			disable_nvimtree_bg = true,
+-- 			terminal_colors = true,
+--
+-- 			color_overrides = {
+-- 				vscLineNumber = "#FFFFFF",
+-- 			},
+--
+-- 			group_overrides = {
+-- 				Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+-- 			},
+-- 		})
+--
+-- 		-- Load the colorscheme
+-- 		vim.cmd.colorscheme("vscode")
+-- 	end,
+-- }
 
 -- return {
 -- 	"Mofiqul/vscode.nvim",
@@ -179,3 +179,49 @@ return {
 -- 		vim.api.nvim_set_hl(0, "Boolean", { fg = "#7BD88F" })
 -- 	end,
 -- }
+
+-- return {
+-- 	"rose-pine/neovim",
+-- 	lazy = false,
+-- 	config = function()
+-- 		require("rose-pine").setup({
+-- 			disable_background = true,
+-- 		})
+--
+-- 		local function ColorMyPencils(color)
+-- 			color = color or "rose-pine"
+-- 			vim.cmd.colorscheme(color)
+-- 			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- 		end
+--
+-- 		ColorMyPencils()
+-- 	end,
+-- }
+
+-- return {
+-- 	"rose-pine/neovim",
+-- 	name = "rose-pine",
+-- 	config = function()
+-- 		require("rose-pine").setup({
+-- 			styles = {
+-- 				bold = true,
+-- 				italic = false,
+-- 				transparency = true,
+-- 			},
+-- 		})
+-- 		vim.cmd("colorscheme rose-pine")
+-- 	end,
+-- }
+
+return {
+	{
+		"neovim/nvim-lspconfig", -- just a dummy, no plugin needed for colors
+		lazy = false,
+		config = function()
+			-- Use true terminal/Vim ANSI colors
+			vim.o.termguicolors = false -- important: disables true-color, uses ANSI
+			vim.cmd.colorscheme("default") -- original Vim colors
+		end,
+	},
+}

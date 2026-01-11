@@ -9,9 +9,11 @@ opacity = 1.0
 # italic = { family = "Terminess Nerd Font Mono", style = "Bold" }  # Force italics to use bold
 # normal = { family = "Zenbones Brainy", style = "normal" } 
 # italic = { family = "Zenbones Brainy", style = "normal" }  # Force italics to use bold
-normal = { family = "UbuntuMono Nerd Font", style = "normal" } 
-italic = { family = "UbuntuMono Nerd Font", style = "normal" }  # Force italics to use bold
-size = 19
+# normal = { family = "UbuntuMono Nerd Font", style = "normal" } 
+# italic = { family = "UbuntuMono Nerd Font", style = "normal" }  # Force italics to use bold
+normal = { family = "DejaVu Sans Mono", style = "normal" } 
+italic = { family = "DejaVu Sans Mono", style = "normal" }  # Force italics to use bold
+size = 17.5
 
 # [colors.primary]
 # background = '#000000'
