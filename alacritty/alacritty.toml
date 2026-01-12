@@ -12,12 +12,10 @@ opacity = 1.0
 # normal = { family = "UbuntuMono Nerd Font", style = "normal" } 
 # italic = { family = "UbuntuMono Nerd Font", style = "normal" }  # Force italics to use bold
 normal = { family = "DejaVu Sans Mono", style = "normal" } 
-italic = { family = "DejaVu Sans Mono", style = "normal" }  # Force italics to use bold
-size = 17.5
+italic = { family = "DejaVu Sans Mono", style = "normal" }  
+bold   = { family = "DejaVu Sans Mono", style = "normal" } 
 
-# [colors.primary]
-# background = '#000000'
-# foreground = '#ffffff'
+size = 17.5
 
 [scrolling]
 history = 100000
@@ -31,3 +29,11 @@ hide_when_typing = true
 
 [general]
 live_config_reload = true
+
+[colors.primary]
+background = '#000000'
+foreground = '#ffffff'
+
+[colors.cursor]
+text = '#F81CE5'
+cursor = '#ffffff'

@@ -199,29 +199,17 @@
 -- 	end,
 -- }
 
--- return {
--- 	"rose-pine/neovim",
--- 	name = "rose-pine",
--- 	config = function()
--- 		require("rose-pine").setup({
--- 			styles = {
--- 				bold = true,
--- 				italic = false,
--- 				transparency = true,
--- 			},
--- 		})
--- 		vim.cmd("colorscheme rose-pine")
--- 	end,
--- }
-
 return {
-	{
-		"neovim/nvim-lspconfig", -- just a dummy, no plugin needed for colors
-		lazy = false,
-		config = function()
-			-- Use true terminal/Vim ANSI colors
-			vim.o.termguicolors = false -- important: disables true-color, uses ANSI
-			vim.cmd.colorscheme("default") -- original Vim colors
-		end,
-	},
+	"rose-pine/neovim",
+	name = "rose-pine",
+	config = function()
+		require("rose-pine").setup({
+			styles = {
+				bold = true,
+				italic = false,
+				transparency = true,
+			},
+		})
+		vim.cmd("colorscheme rose-pine")
+	end,
 }
