@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# twatch — open twitch chat and stream in i3 + mpv using streamlink
-# Usage: twatch <twitch_channel_name> (lowercase)
-#
-# Example:
-#   twatch mrtypo7
+# twatch — open twitch chat and stream in sway + mpv (Wayland)
+# Usage: twatch <twitch_channel_name>
 
 WORKSPACE="3"
 BROWSER="firefox"
@@ -18,21 +15,22 @@ fi
 TWITCH_CHANNEL="$1"
 TWITCH_URL="https://www.twitch.tv/$TWITCH_CHANNEL"
 
-echo "🔍 Checking if $TWITCH_CHANNEL is live..."
+echo "Checking if $TWITCH_CHANNEL is live..."
 
-# Check if stream is live (quietly)
-streamlink --json "$TWITCH_URL" best >/dev/null 2>&1
-STATUS=$?
-
-if [ $STATUS -ne 0 ]; then
-    echo "❌ $TWITCH_CHANNEL is offline or does not exist."
+# Check if stream is live
+if ! streamlink --quiet --stream-url "$TWITCH_URL" best >/dev/null 2>&1; then
+    echo "$TWITCH_CHANNEL is offline or unreachable."
     exit 1
 fi
 
-echo "✅ $TWITCH_CHANNEL is live! Launching chat and stream..."
+echo "$TWITCH_CHANNEL is live. Launching chat and stream..."
 
-# Open Twitch chat (silent)
-i3-msg "workspace $WORKSPACE; exec --no-startup-id $BROWSER --new-window --kiosk https://www.twitch.tv/popout/$TWITCH_CHANNEL/chat" >/dev/null 2>&1
+# Open Twitch chat on target workspace
+swaymsg workspace "$WORKSPACE"
+swaymsg exec "$BROWSER --new-window https://www.twitch.tv/popout/$TWITCH_CHANNEL/chat"
 
-# Start stream silently in background
-nohup streamlink --player=$PLAYER "$TWITCH_URL" "1080p,best" >/dev/null 2>&1 &
+nohup streamlink \
+    --player "$PLAYER" \
+    --player-args="--gpu-context=wayland --force-window=yes" \
+    "$TWITCH_URL" "1080p,best" \
+    >/dev/null 2>&1 &

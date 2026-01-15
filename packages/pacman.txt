@@ -53,6 +53,7 @@ rsync
 screenkey
 shotcut
 slurp
+streamlink
 sway-git
 swayimg
 syncthing
