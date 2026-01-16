@@ -35,18 +35,17 @@ set $menu exec rofi -show drun
 
 default_border pixel 2
 default_floating_border pixel 2
+smart_borders on
 
 gaps inner 8
 gaps outer 4
 smart_gaps on
 
-
 ############################
 # Outputs / Wallpaper
 ############################
 
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
+output * bg /home/tpose/media/images/wallpapers/dragon-ball/goku-kid-happy.png fill
 
 ############################
 # Input

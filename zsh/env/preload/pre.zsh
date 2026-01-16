@@ -5,7 +5,7 @@ export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump-$HOST"
 # See <https://github.com/ohmyzsh/ohmyzsh/wiki/Themes> for more themes.
 # Those already come pre-installed and are located at $HOME/.oh-my-zosh:/themes
 
-ZSH_THEME="norm"
+ZSH_THEME="alanpeabody"
 
 plugins=(
     git
