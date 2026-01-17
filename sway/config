@@ -45,7 +45,7 @@ smart_gaps on
 # Outputs / Wallpaper
 ############################
 
-output * bg /home/tpose/media/images/wallpapers/dragon-ball/goku-kid-happy.png fill
+exec_always swaybg -i /home/tpose/media/images/wallpapers/dragon-ball/goku-kid-happy.png -m fill
 
 ############################
 # Input

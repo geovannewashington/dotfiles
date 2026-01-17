@@ -1,8 +1,8 @@
-nvidia-580xx-dkms
-nvidia-580xx-utils
 obs-cli-bin-debug
 oh-my-zsh-git
 sway-git
+tracktion-waveform
+tracktion-waveform-debug
 wlroots-git
 yay
 yay-debug
