@@ -1,3 +1,6 @@
+lib32-nvidia-580xx-utils
+nvidia-580xx-dkms
+nvidia-580xx-utils
 obs-cli-bin-debug
 oh-my-zsh-git
 sway-git

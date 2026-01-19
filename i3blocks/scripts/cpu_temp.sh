@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
-cat /sys/class/thermal/thermal_zone0/temp | awk '{printf "%.1f°C\n", $1/1000}'
+for h in /sys/class/hwmon/hwmon*; do
+    if [[ "$(cat "$h/name")" == "coretemp" ]]; then
+        cat "$h/temp1_input" | awk '{printf "%.1f°C\n", $1/1000}'
+    fi
+done

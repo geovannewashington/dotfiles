@@ -28,7 +28,7 @@ intel-ucode
 jq
 keyd
 lib32-gamemode
-lib32-nvidia-utils
+lib32-nvidia-580xx-utils
 libnotify
 libpulse
 linux
@@ -40,10 +40,11 @@ mpv
 neovim
 nodejs
 noto-fonts
+noto-fonts-cjk
 noto-fonts-emoji
 npm
-nvidia-open-dkms
-nvidia-utils
+nvidia-580xx-dkms
+nvidia-580xx-utils
 oh-my-zsh-git
 openssh
 pipewire

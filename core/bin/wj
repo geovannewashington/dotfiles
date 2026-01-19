@@ -77,11 +77,8 @@ en)
 audios)
     open "https://aulasdeinglesgratis.net/200-textos-em-ingles-com-traducao-e-audio/"
     ;;
-seek)
-    open "https://chat.deepseek.com/"
-    ;;
 cs)
-    open "https://cs50.harvard.edu/x/2025/"
+    open "https://cs50.harvard.edu/x/2026/"
     ;;
 gpt)
     open "https://chat.openai.com/"
@@ -97,10 +94,6 @@ ghub)
     [ -z "$args" ] && open "https://github.com/geovannewashington" ||
         open "https://github.com/$(encode "$args")"
     ;;
-med)
-    [ -z "$args" ] && open "https://medium.com/me/stories/drafts" ||
-        open "https://medium.com/@$(encode "$args")"
-    ;;
 ud)
     [ -z "$args" ] && open "https://www.udemy.com/home/my-courses/learning/" ||
         open "https://www.udemy.com/courses/search/?q=$(encode "$args")"
@@ -108,14 +101,18 @@ ud)
 monk)
     open "https://monkeytype.com/"
     ;;
-simpsons)
-    open "https://fmovies-tv.tv/tv/watch-the-simpsons-movies-free-fmovies-39543"
-    ;;
 in)
     open "https://www.linkedin.com/jobs/"
     ;;
 bootdev)
     open "https://www.boot.dev/dashboard"
+    ;;
+map)
+    case "$args" in
+    go) open "https://roadmap.sh/golang" ;;
+    docker) open "https://roadmap.sh/docker" ;;
+    *) rofi -e "Unknown command: $args" ;;
+    esac
     ;;
 *)
     rofi -e "Unknown command: $cmd"
