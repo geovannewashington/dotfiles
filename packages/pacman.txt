@@ -47,6 +47,7 @@ nvidia-580xx-dkms
 nvidia-580xx-utils
 oh-my-zsh-git
 openssh
+papirus-icon-theme
 pipewire
 pipewire-alsa
 pipewire-jack
