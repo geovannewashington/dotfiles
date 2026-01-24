@@ -76,6 +76,7 @@ ttf-dejavu
 ttf-terminus-nerd
 ttf-ubuntu-mono-nerd
 tumbler
+ueberzugpp
 unzip
 valgrind
 wev
