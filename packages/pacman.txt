@@ -6,6 +6,7 @@ btrfs-progs
 clang
 cpupower
 cronie
+discord
 dunst
 efibootmgr
 fastfetch

@@ -18,6 +18,6 @@ swaymsg workspace 4
 swaymsg exec "flatpak run net.ankiweb.Anki &"
 sleep 5
 
-# Open Discord (flatpak)
+# Open Discord
 swaymsg workspace 5
-swaymsg exec "flatpak run com.discordapp.Discord &"
+swaymsg exec "discord &"
