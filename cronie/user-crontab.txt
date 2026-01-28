@@ -36,7 +36,7 @@
 00 07 * * 3 /home/tpose/core/bin/notify.sh "Go" "boot.dev OFFLINE" "go-gopher.png"
 00 09 * * 3 /home/tpose/core/bin/notify.sh "Sun" "Fresh air" "nature.png"
 20 09 * * 3 /home/tpose/core/bin/notify.sh "Go" "roadmap.sh – testing" "go-gopher.png"
-20 10 * * 3 /home/tpose/core/bin/notify.sh "Go" "roadmap.sh – SQL" "database.png"
+20 10 * * 3 /home/tpose/core/bin/notify.sh "Go" "roadmap.sh – SQL" "go-gopher.png"
 20 11 * * 3 /home/tpose/core/bin/notify.sh "Docker" "Practice" "docker-logo.png"
 20 13 * * 3 /home/tpose/core/bin/notify.sh "English" "Study" "english-logo.png"
 50 13 * * 3 /home/tpose/core/bin/notify.sh "Anki" "Review (English)" "anki-logo.png"

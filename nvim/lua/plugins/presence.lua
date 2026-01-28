@@ -7,11 +7,10 @@ return {
 
 			-- Don't show these filetypes
 			blacklist = {
-				"%.txt$",
-				"%.markdown$",
-				"%.md$",
-				"%.json$",
-				"%.log$",
+				"markdown",
+				"text",
+				"json",
+				"log",
 			},
 
 			buttons = true,
